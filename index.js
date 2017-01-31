@@ -13,6 +13,9 @@ const GIT_REMOTE_ADD = "git remote add";
 const GIT_SSH_PREFIX = "ssh://git@github.com";
 const GIT_PUSH = "git push";
 const GIT_PULL = "git pull";
+
+const GIT_FETCH = "git fetch";
+const GIT_MERGE = "git merge";
 // 
 
 function ExecCommand(cmd){
@@ -94,6 +97,22 @@ function _pull(args,repo,branch){
 	cmd += GIT_PULL + " " + _args.join("") + " " + repo + " " + branch;
 	ExecCommand(cmd);
 }
+
+function _fetch(args,repo){
+	var cmd = "";
+	var _args = args ? args:[''];
+
+	cmd += GIT_FETCH + " " + _args.join("") + " " + repo;
+	ExecCommand(cmd);
+}
+
+function _merge(args,repo,branch){
+	var cmd = "";
+	var _args = args ? args:[''];
+
+	cmd += GIT_MERGE + " " + _args.join("") + " " + repo;
+	ExecCommand(cmd);
+}
 /*
 _init();
 _status();
@@ -106,6 +125,7 @@ _push(["-f"],"lola","master");
 */
 
 _commit(['-am'],"commit all");
-_pull(["-f"],"lola","master");
+_fetch([""],"lola");
+_merge([""],"lola");
 _status();
 _diff();
