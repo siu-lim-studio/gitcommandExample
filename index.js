@@ -106,6 +106,6 @@ _push(["-f"],"lola","master");
 */
 
 _commit(['-am'],"commit all");
-_pull(null,"lola","master");
+_pull(["-f"],"lola","master");
 _status();
 _diff();
