@@ -87,6 +87,14 @@ function _push(args,repo,branch){
 	ExecCommand(cmd);
 }
 
+function _pull(args,repo,branch){
+	var cmd = "";
+	var _args = args ? args:[''];
+
+	cmd += GIT_PULL + " " + _args.join("") + " " + repo + " " + branch;
+	ExecCommand(cmd);
+}
+/*
 _init();
 _status();
 _diff();
@@ -95,3 +103,9 @@ _commit(['-am'],"commit all");
 
 _remoteAdd("lola","siu-lim-studio","gitCommandExample");
 _push(["-f"],"lola","master");
+*/
+
+_commit(['-am'],"commit all");
+_pull(null,"lola","master");
+_status();
+_diff();
