@@ -18,11 +18,9 @@ const GIT_PULL = "git pull";
 function ExecCommand(cmd){
 	exec(cmd,"SIGTERM", function(error, stdout, stderr) {
 	  // command output is in stdout
-	  console.log(`stdout: ${stdout}`);
-	        console.log(`stderr: ${stderr}`);
-	        if (error) {
-	            console.log(`exec error: ${error}`);
-	        }
+	    if (error) {
+	      console.log(`exec error: ${error}`);
+	    }
 	});
 }
 
