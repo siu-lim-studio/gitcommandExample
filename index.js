@@ -95,5 +95,5 @@ _diff();
 _addAll();
 _commit(['-am'],"commit all");
 
-//_remoteAdd("lolo","siu-lim-studio","gitCommandExample");
-//_push(["-f"],"lolo","master");
+_remoteAdd("lola","siu-lim-studio","gitCommandExample");
+_push(["-f"],"lola","master");
